@@ -1,66 +1,59 @@
 <?php
-
-
-/*
-    var_dump() sẽ in ra thông tin của biến gồm kiểu dữ liệu của biến và giá trị.
-    is_* :* => int, bool, float, nummeric, string, array, object
-    int: là số nguyên
-    float: là số thập phân
-    bool: trả về true hoặc false
-    nummeric: kiểm tra có phải là số hay không nếu string trả về false;
-    NaN là viết tắt của Not a Number (không phải là số)
-    ...
-
-
-*/
-// =============int là số nguyên là số không có dấu phẩy=================================
-$n_int = 6868;
-var_dump(is_int($n_int));
-echo "</br>"."============"."</br>";
-
-
-
-// ==============float là số có đấy chấm và có thể lưu trữ số lớn hơn int================
-$n_float =1.9e411;//Float max
-var_dump($n_float);
-var_dump(is_float($n_float));
-echo "</br>"."============"."</br>";
-
-
-/*=================== NaN là viết tắt của Not a Number (không phải là số)================== */
-
-$nan = acos(8);
-// var_dump($nan);
-// echo var_dump(is_nan($nan)); ==> result :True
+//======================Function===================
+/*********************Số PI*************************
+ * Syntax: pi()
+ */
+$number_pi = pi();//3.1415926535898
+echo var_dump($number_pi);//float(pi)
 
 echo "</br>"."============"."</br>";
 
-/*============== kiểm tra dữ liệu đó có phải là số hay không? nếu string -> fasle================ */
-$n_nummeric = 6655;//true
-$n_nummeric = "222";//true
-$n_nummeric = "test";//fasle
-var_dump(is_numeric($n_nummeric));
-
-echo "</br>"."============"."</br>";
-
-/*=========================PHP Casting String and Float to Integers =======================
-**************************(Truyền chuỗi và thập phân thành số nguyên)*********************** 
-
-Syntax: (_)$...
-Mô tả : _ là kiểu dữ liệu muốn chuyển đổi string,float,int,object,array.
-        $... là tên biến muốn chuyển đổi.
-Note: có thể sử dụng var_dump để xem trực quan.
+/* ==================PHP min() and max() Functions==================== 
+*Syntax : min(int or var);
+*Syntax : max(int or var);
 */
 
-$xy = 2343.99;
-var_dump($xy);
-echo " ==> ";
-$cast = (array)$xy;
-var_dump($cast);
+echo (min(0,100,200,-900,-200));//-900
+echo "</br>"."============"."</br>";
+
+echo (max(0,100,200,-900,-200));//200
+echo "</br>"."============"."</br>";
+/* thử trên array */
+$n = array(0,1,2,3,4,5,6,7,8);
+echo max($n);//8
+echo "</br>"."============"."</br>";
+
+/*==================PHP abs() Function========================
+ trả về số dương
+ Syntax : abs()
+*/
+
+$n_abs = -999;
+echo (abs($n_abs));//999
 
 echo "</br>"."============"."</br>";
-/* Kiểm tra nó có phải lá null không ? */
-$n_null=null;
-echo var_dump(is_null($n_null));
+/* ==================PHP sqrt() Function=======================
+Căng bậc 2
+Syntax: sqrt(int)
+*/
+echo(sqrt(9));  // returns 8
+echo "</br>"."============"."</br>";
 
+/****************************PHP round() Function********************** 
+ Làm tròn
+ Syntax: round()
+*/
+
+$n_round = 8.4;
+$n_round2 = 8.6;
+
+echo "Làm tròn số :".(round($n_round))." : ".(round($n_round2)); //Làm tròn số :8 : 9
+
+echo "</br>"."============"."</br>";
+
+/*******************************Random Numbers****************************
+ * Số random (ngẫu nhiên)
+ * Syntax: rand(int(min),int(max))
+ */
+echo (rand(1,9))
 ?>
