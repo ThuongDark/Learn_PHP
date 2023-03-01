@@ -1,38 +1,48 @@
 <?php
-class Employee
-{
-  private $first_name;
-  
-  private $last_name;
-  private $age;
- 
-  public function __construct($first_name, $last_name, $age)
-  {
-    $this->first_name = $first_name;
-    $this->last_name = $last_name;
-    $this->age = $age;
-  }
-  public function getFirstName()
-  {
-    return $this->first_name;
-  }
-  public function getLastName()
-  {
-    return $this->last_name;
-  }
-  public function getAge()
-  {
-    return $this->age;
-  }
-}
+//Đếm dộ dài của chuỗi bao gồm dấu cách [space]
+echo "Đếm các từ trong chuỗi này - 'Hello test' =>" . strlen('Hello test') . "</br>";
 
 
-$objEmployeeOne = new Employee('Bob', 'Smith', 30);
-echo $objEmployeeOne->getFirstName(); // prints 'Bob' 
-echo $objEmployeeOne->getLastName(); // prints 'Smith' 
-echo $objEmployeeOne->getAge(); // prints '30' 
-$objEmployeeTwo = new Employee('John', 'Smith', 34);
-echo $objEmployeeTwo->getFirstName(); // prints 'John' 
-echo $objEmployeeTwo->getLastName(); // prints 'Smith' 
-echo $objEmployeeTwo->getAge(); // prints '34' 
+// Trả về số chuỗi nếu string là số sẽ bỏ qua
+echo str_word_count('Hello word fddd d') . "</br>"; //4
+
+//Đảo ngược chuỗi;
+echo strrev('Hello world') . "</br>";
+
+//----------------Tìm từ trong chuỗi----------------------
+/* Syntax : strpos("str","char","position")
+str: chuỗi;
+char: ký tự muốn tìm kiếm
+position: vị trí bắt đầu tìm kiếm if rỗng mặc định bắt đầu position 0
+
+Note: nếu không có ký tự tồn tại trong chuỗi thì sẽ trả về fasle
+*/
+echo strpos("Hello word? w  w w ", "w") . "</br>";
+
+// $str = "Hello word";
+// $char = "word";
+// $strpos = strpos($str,$char);
+
+// if ($strpos == false)
+// {
+//   echo "không tìm thấy ký tự ".$char;
+// }
+// else
+// {
+// echo "Đã tìm thấy ký tự ".$char." tại vị trí ".$strpos;
+// }
+
+
+
+//-------------- Thay đổi ký tự---------------
+/* Syntax : str_replace("strSearch","StrReplace","subject")
+
+strSearch : từ muốn tìm kiếm;
+strReplace : từ muốn thay đổi
+subbject(chủ thể) : là mảng muốn thay đổi
+
+*/
+echo str_replace("world","Dolly","Hello mọi người nha world");
+
+
 ?>
