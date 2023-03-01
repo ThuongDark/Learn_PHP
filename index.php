@@ -1,59 +1,39 @@
 <?php
-//======================Function===================
-/*********************Số PI*************************
- * Syntax: pi()
+/************************************PHP Constants********************************* */
+/**Syntax: denfine(name,value) 
+ * name: tên của hằng
+ * value: giá trị
+ * Note: tên hằng phải nằm trong dấu ""
+*/
+define("VALUE", "Đây là value");
+echo VALUE; 
+echo "</br>"."============"."</br>";
+/***********************PHP Constant Arrays********************************
+ * 
  */
-$number_pi = pi();//3.1415926535898
-echo var_dump($number_pi);//float(pi)
 
+define("cars",["Xe 1","Xe 2","Xe 3"]);
+echo cars[1];
 echo "</br>"."============"."</br>";
-
-/* ==================PHP min() and max() Functions==================== 
-*Syntax : min(int or var);
-*Syntax : max(int or var);
-*/
-
-echo (min(0,100,200,-900,-200));//-900
-echo "</br>"."============"."</br>";
-
-echo (max(0,100,200,-900,-200));//200
-echo "</br>"."============"."</br>";
-/* thử trên array */
-$n = array(0,1,2,3,4,5,6,7,8);
-echo max($n);//8
-echo "</br>"."============"."</br>";
-
-/*==================PHP abs() Function========================
- trả về số dương
- Syntax : abs()
-*/
-
-$n_abs = -999;
-echo (abs($n_abs));//999
-
-echo "</br>"."============"."</br>";
-/* ==================PHP sqrt() Function=======================
-Căng bậc 2
-Syntax: sqrt(int)
-*/
-echo(sqrt(9));  // returns 8
-echo "</br>"."============"."</br>";
-
-/****************************PHP round() Function********************** 
- Làm tròn
- Syntax: round()
-*/
-
-$n_round = 8.4;
-$n_round2 = 8.6;
-
-echo "Làm tròn số :".(round($n_round))." : ".(round($n_round2)); //Làm tròn số :8 : 9
-
-echo "</br>"."============"."</br>";
-
-/*******************************Random Numbers****************************
- * Số random (ngẫu nhiên)
- * Syntax: rand(int(min),int(max))
+/***********************Constants are Global********************************
+ * Hằng có tính global có thể truyền thẳng vào function
+ * Vì có thể truyền thẳng vào function nên không cần khai báo global như biến bình thường
  */
-echo (rand(1,9))
+
+ define("NUMBER",99);
+
+ function getNumber()
+ {
+    echo NUMBER;
+
+}
+getNumber();
+// so sánh với biến
+// $number =88;
+// function getNumber2()
+// {
+//     global $number;
+//     echo $number;
+// }
+// getNumber2()//88
 ?>
