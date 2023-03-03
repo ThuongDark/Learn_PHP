@@ -1,39 +1,34 @@
 <?php
-/************************************PHP Constants********************************* */
-/**Syntax: denfine(name,value) 
- * name: tên của hằng
- * value: giá trị
- * Note: tên hằng phải nằm trong dấu ""
-*/
-define("VALUE", "Đây là value");
-echo VALUE; 
-echo "</br>"."============"."</br>";
-/***********************PHP Constant Arrays********************************
- * 
- */
+/************************************PHP Operators********************************* */
+//Toán tử
+//PHP String Operators
+//Concatenation assignment(Phép gán)
+$txt1 = "Hi";
+$txt2 = "Xin chào mọi người";
+echo $txt1 .= $txt2; //HiXin chào mọi người
 
-define("cars",["Xe 1","Xe 2","Xe 3"]);
-echo cars[1];
-echo "</br>"."============"."</br>";
-/***********************Constants are Global********************************
- * Hằng có tính global có thể truyền thẳng vào function
- * Vì có thể truyền thẳng vào function nên không cần khai báo global như biến bình thường
- */
 
- define("NUMBER",99);
+echo "</br>" . "============" . "</br>";
 
- function getNumber()
- {
-    echo NUMBER;
+$x = array("a" => "red", "b" => "green");
+$y = array("c" => "blue", "d" => "yellow");
 
-}
-getNumber();
-// so sánh với biến
-// $number =88;
-// function getNumber2()
-// {
-//     global $number;
-//     echo $number;
-// }
-// getNumber2()//88
+$array = $x + $y; //Array ( [a] => red [b] => green [c] => blue [d] => yellow )
+// vì đây là array nên echo sẽ không hiển thị nó thay bằng print_r
+ var_dump($array);
+echo "</br>" . "============" . "</br>";
+print_r($array);
+echo "</br>" . "============" . "</br>";
+
+$number = (object) 8;
+print_r($number);
+echo "</br>" . "============" . "</br>";
+
+//Hàm emty là hàm kiểu biến đó trống hay không
+$user = "";
+echo (empty($user)) ? true : false;//true
+
+
+
+
 ?>
