@@ -1,42 +1,51 @@
 <?php
-
-/*********************Array_string ascending order************* */
-$array_strings = array('c','b','a','d');
-sort($array_strings);
-foreach($array_strings as $array_string )
+/*********************Array value ascending order************* */
+$array = array('HTML'=>100,'CSS'=>800,'JAVASCRIPT'=>500,'REACTJS'=>120);
+asort($array);
+foreach($array as $list=>$coin)
 {
-echo $array_string;//abcd
+echo "$list : $coin.000VND ".'<br>';
+/*
+HTML : 100.000VND
+REACTJS : 120.000VND
+JAVASCRIPT : 500.000VND
+CSS : 800.000VND */
 }
 echo "</br>"."============"."</br>";
-
-
-/*********************Array_number ascending order************* */
-$array_numbers = array(5,3,2,1,4);
-sort($array_numbers);
-foreach($array_numbers as $array_number )
+/*********************Array value ascending order************* */
+arsort($array);
+foreach($array as $list=>$coin)
 {
-echo $array_number;//12345
+echo "$list : $coin.000VND ".'<br>';
+/*
+CSS : 800.000VND
+JAVASCRIPT : 500.000VND
+REACTJS : 120.000VND
+HTML : 100.000VND */
 }
 echo "</br>"."============"."</br>";
-
-
-/*********************Array_string descending order************* */
-$array_strings = array('c','b','a','d');
-rsort($array_strings);
-foreach($array_strings as $array_string )
+/*********************Array key descending order************* */
+ksort($array);
+foreach($array as $list=>$coin)
 {
-echo $array_string;//abcd
+echo "$list : $coin.000VND ".'<br>';
+/*
+CSS : 800.000VND
+HTML : 100.000VND
+JAVASCRIPT : 500.000VND
+REACTJS : 120.000VND */
 }
 echo "</br>"."============"."</br>";
-
-
-
-/*********************Array_number descending order************* */
-$array_numbers = array(5,3,2,1,4);
-rsort($array_numbers);
-foreach($array_numbers as $array_number )
+/*********************Array key descending order************* */
+krsort($array);
+foreach($array as $list=>$coin)
 {
-echo $array_number;//12345
+echo "$list : $coin.000VND ".'<br>';
+/*
+REACTJS : 120.000VND
+JAVASCRIPT : 500.000VND
+HTML : 100.000VND
+CSS : 800.000VND */
 }
 echo "</br>"."============"."</br>";
 
